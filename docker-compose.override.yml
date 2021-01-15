@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: API1/Dockerfile
+    restart: always
     ports:
       - "5001:80"
     environment:
@@ -20,6 +21,7 @@ services:
     build:
       context: .
       dockerfile: API2/Dockerfile
+    restart: always
     ports:
       - "5002:80"
     environment:
