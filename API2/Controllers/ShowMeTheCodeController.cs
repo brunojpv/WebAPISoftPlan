@@ -26,9 +26,9 @@ namespace API2.Controllers
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex, "Erro no calculo de juros!!!");
+                _logger.LogError(ex, "Erro na URL do GitHub da API2!!!");
 
-                return "Erro no calculo de juros!!!";
+                return "";
             }
         }        
     }

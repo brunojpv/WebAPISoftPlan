@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,10 +10,28 @@ namespace API1.Controllers
     [ApiController]
     public class ShowMeTheCodeController : ControllerBase
     {
+        private static ILogger<ShowMeTheCodeController> _logger;
+
+        public ShowMeTheCodeController(ILogger<ShowMeTheCodeController> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpGet]
         public string Get()
         {
-            return "https://github.com/brunojpv/API1.git";
+            try
+            {
+                _logger.LogInformation("URL do GitHub enviada com sucesso!!!");
+
+                return "https://github.com/brunojpv/API1.git";
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Erro na URL do GitHub da API1!!!");
+
+                return "";
+            }
         }        
     }
 }
