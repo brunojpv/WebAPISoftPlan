@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  api1:
+    container_name: api1
+    build:
+      context: .
+      dockerfile: API1/Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - app-network
+  
+  api2:
+    container_name: api2
+    depends_on: 
+      - api1
+    build:
+      context: .
+      dockerfile: API2/Dockerfile
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

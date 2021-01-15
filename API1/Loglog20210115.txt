@@ -1,0 +1,25 @@
+2021-01-15 00:26:20.065 +00:00 [INF] Iniciando worker!!!
+2021-01-15 00:26:20.930 +00:00 [DBG] Hosting starting
+2021-01-15 00:26:21.207 +00:00 [DBG] Failed to locate the development https certificate at 'null'.
+2021-01-15 00:26:21.227 +00:00 [INF] Now listening on: http://[::]:80
+2021-01-15 00:26:21.228 +00:00 [DBG] Loaded hosting startup assembly API1
+2021-01-15 00:26:21.231 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-01-15 00:26:21.232 +00:00 [INF] Hosting environment: Production
+2021-01-15 00:26:21.232 +00:00 [INF] Content root path: /app
+2021-01-15 00:26:21.232 +00:00 [DBG] Hosting started
+2021-01-15 00:26:22.153 +00:00 [DBG] Connection id "0HM5OTGNNIQNF" accepted.
+2021-01-15 00:26:22.156 +00:00 [DBG] Connection id "0HM5OTGNNIQNF" started.
+2021-01-15 00:26:22.186 +00:00 [DBG] Connection id "0HM5OTGNNIQNG" accepted.
+2021-01-15 00:26:22.187 +00:00 [DBG] Connection id "0HM5OTGNNIQNG" started.
+2021-01-15 00:26:22.468 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/weatherforecast  
+2021-01-15 00:26:22.500 +00:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2021-01-15 00:26:22.519 +00:00 [WRN] Failed to determine the https port for redirect.
+2021-01-15 00:26:22.741 +00:00 [DBG] No candidates found for the request path '/weatherforecast'
+2021-01-15 00:26:22.743 +00:00 [DBG] Request did not match any endpoints
+2021-01-15 00:26:22.804 +00:00 [DBG] Connection id "0HM5OTGNNIQNG" completed keep alive response.
+2021-01-15 00:26:22.859 +00:00 [INF] Request finished in 367.2407ms 404 
+2021-01-15 00:26:44.218 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/swagger  
+2021-01-15 00:26:44.219 +00:00 [DBG] No candidates found for the request path '/swagger'
+2021-01-15 00:26:44.219 +00:00 [DBG] Request did not match any endpoints
+2021-01-15 00:26:44.220 +00:00 [DBG] Connection id "0HM5OTGNNIQNG" completed keep alive response.
+2021-01-15 00:26:44.220 +00:00 [INF] Request finished in 1.7332ms 404 
