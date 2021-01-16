@@ -20,7 +20,7 @@ namespace API2.Controllers
             _jurosService = jurosService;
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<decimal> GetCalculaJuros(double valorInicial, int tempo)
         {
             try
