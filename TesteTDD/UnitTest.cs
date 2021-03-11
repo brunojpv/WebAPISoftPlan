@@ -28,7 +28,7 @@ namespace TesteTDD
             var controle = new CalculaJurosController(_logger, _jurosService);
             
             // Act
-            var resp = await controle.GetCalculaJuros(100.00, 5);
+            var resp = await controle.CalculaJuros(100.00, 5);
 
             // Assert
             Assert.Equal(105.10M, resp);            
