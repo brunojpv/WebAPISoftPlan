@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace API2.Controllers
 {
-    [Route("api/calculajuros")]
     [ApiVersion("1")]
     [ApiController]
     public class CalculaJurosController : ControllerBase
@@ -22,6 +21,7 @@ namespace API2.Controllers
         }
 
         [HttpGet]
+        [Route("api/showmethecode")]
         public string ShowMeTheCode()
         {
             try
@@ -39,6 +39,7 @@ namespace API2.Controllers
         }
 
         [HttpPost]
+        [Route("api/calculajuros")]
         public async Task<decimal> CalculaJuros(double valorInicial, int tempo)
         {
             try
