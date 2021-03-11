@@ -4,7 +4,7 @@ using System;
 
 namespace API1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/taxaJuros")]
     [ApiController]
     public class TaxaJurosController : ControllerBase
     {

@@ -2,8 +2,6 @@
 using Microsoft.Extensions.Logging;
 using System;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace API1.Controllers
 {
     [Route("api/[controller]")]
