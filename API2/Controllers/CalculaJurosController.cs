@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace API2.Controllers
 {
     [Route("api/calculajuros")]
+    [ApiVersion("1")]
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
@@ -21,7 +22,24 @@ namespace API2.Controllers
         }
 
         [HttpGet]
-        public async Task<decimal> GetCalculaJuros(double valorInicial, int tempo)
+        public string ShowMeTheCode()
+        {
+            try
+            {
+                _logger.LogInformation("URL do GitHub enviada com sucesso!!!");
+
+                return "https://github.com/brunojpv/WebAPISoftPlan.git";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro na URL do GitHub da API2!!!");
+
+                return "";
+            }
+        }
+
+        [HttpPost]
+        public async Task<decimal> CalculaJuros(double valorInicial, int tempo)
         {
             try
             {
