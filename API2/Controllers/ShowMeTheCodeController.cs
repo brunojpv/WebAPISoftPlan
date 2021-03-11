@@ -4,7 +4,7 @@ using System;
 
 namespace API2.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/showmethecode")]
     [ApiController]
     public class ShowMeTheCodeController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace API2.Controllers
             {
                 _logger.LogInformation("URL do GitHub enviada com sucesso!!!");
 
-                return "https://github.com/brunojpv/API2.git";
+                return "https://github.com/brunojpv/WebAPISoftPlan.git";
             }
             catch(Exception ex)
             {
