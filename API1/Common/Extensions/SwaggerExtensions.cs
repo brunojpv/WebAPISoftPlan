@@ -32,7 +32,7 @@ namespace API1.Common.Extensions
             services.AddSwaggerGen(config =>
             {
                 config.TagActionsBy(api => api.GroupBySwaggerGroupAttribute());
-                config.SetXmlDocumentation();                
+                config.SetXmlDocumentation();
             });
             services.AddSwaggerGenNewtonsoftSupport();
         }
@@ -150,7 +150,7 @@ namespace API1.Common.Extensions
 
                 return info;
             }
-        }        
+        }
     }
 
     public class ReplaceVersionWithExactValueInPath : IDocumentFilter

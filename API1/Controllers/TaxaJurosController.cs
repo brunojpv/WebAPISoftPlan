@@ -30,7 +30,7 @@ namespace API1.Controllers
 
                 return 0.01M;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Erro na taxa de juros!!!");
 

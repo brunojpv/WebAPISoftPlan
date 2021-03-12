@@ -54,7 +54,7 @@ namespace API2.Controllers
 
                 return valorFinal;
             }
-            catch(HttpRequestException ex)
+            catch (HttpRequestException ex)
             {
                 _logger.LogError(ex, "Erro no calculo de juros!!!");
 
