@@ -1,10 +1,11 @@
+using API2.Common.Extensions;
 using API2.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 
 namespace API2
 {
@@ -19,26 +20,23 @@ namespace API2
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddExtentions(Configuration);
+            services.AddSwaggerGenNewtonsoftSupport();
             services.AddScoped<IJurosService, JurosService>();
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API1", Version = "v1" });
-            });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider versionProvider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API2 v1"));
             }
 
+            app.UseHttpsRedirection();
             app.UseRouting();
-
             app.UseAuthorization();
+            app.AddExtensions(versionProvider);
 
             app.UseEndpoints(endpoints =>
             {

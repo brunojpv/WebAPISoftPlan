@@ -11,8 +11,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 
-namespace API1.Common.Extensions
+namespace API2.Common.Extensions
 {
     public struct ApiInfos
     {
@@ -32,7 +33,7 @@ namespace API1.Common.Extensions
             services.AddSwaggerGen(config =>
             {
                 config.TagActionsBy(api => api.GroupBySwaggerGroupAttribute());
-                config.SetXmlDocumentation();                
+                config.SetXmlDocumentation();
             });
             services.AddSwaggerGenNewtonsoftSupport();
         }
@@ -150,7 +151,7 @@ namespace API1.Common.Extensions
 
                 return info;
             }
-        }        
+        }
     }
 
     public class ReplaceVersionWithExactValueInPath : IDocumentFilter
