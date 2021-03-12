@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API1.Common.Extensions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 
 namespace API1.Controllers
 {
     [Route("api/taxaJuros")]
+    [ApiVersion("1")]
+    [SwaggerGroup("Taxa de Juros")]
     [ApiController]
     public class TaxaJurosController : ControllerBase
     {
@@ -15,8 +19,10 @@ namespace API1.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        public decimal GetTaxaJuros()
+        [HttpGet, MapToApiVersion("1")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public decimal TaxaJuros()
         {
             try
             {
