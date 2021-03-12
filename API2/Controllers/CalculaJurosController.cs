@@ -1,5 +1,6 @@
 ﻿using API2.Common.Extensions;
 using API2.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -22,8 +23,10 @@ namespace API2.Controllers
             _jurosService = jurosService;
         }
 
-        [HttpGet]
+        [HttpGet, MapToApiVersion("1")]
         [Route("api/showmethecode")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public string ShowMeTheCode()
         {
             try
@@ -40,8 +43,10 @@ namespace API2.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost, MapToApiVersion("1")]
         [Route("api/calculajuros")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<decimal> CalculaJuros(double valorInicial, int tempo)
         {
             try
