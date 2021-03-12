@@ -1,4 +1,5 @@
-﻿using API2.Services;
+﻿using API2.Common.Extensions;
+using API2.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 namespace API2.Controllers
 {
     [ApiVersion("1")]
+    [SwaggerGroup("Calculo de Juros")]
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
