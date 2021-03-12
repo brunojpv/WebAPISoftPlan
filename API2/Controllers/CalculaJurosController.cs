@@ -11,7 +11,7 @@ namespace API2.Controllers
 {
     [ApiVersion("1")]
     [SwaggerGroup("Calculo de Juros")]
-    [ApiController]
+    [ApiController, Route("api/v{version:apiVersion}/calculajuros"), Produces("application/json")]
     public class CalculaJurosController : ControllerBase
     {
         private static ILogger<CalculaJurosController> _logger;
@@ -23,8 +23,7 @@ namespace API2.Controllers
             _jurosService = jurosService;
         }
 
-        [HttpGet, MapToApiVersion("1")]
-        [Route("api/showmethecode")]
+        [HttpGet("showmethecode"), MapToApiVersion("1")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public string ShowMeTheCode()
@@ -43,8 +42,7 @@ namespace API2.Controllers
             }
         }
 
-        [HttpPost, MapToApiVersion("1")]
-        [Route("api/calculajuros")]
+        [HttpPost("calculajuros"), MapToApiVersion("1")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<decimal> CalculaJuros(double valorInicial, int tempo)

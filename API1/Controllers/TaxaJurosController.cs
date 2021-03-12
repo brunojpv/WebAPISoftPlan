@@ -6,10 +6,9 @@ using System;
 
 namespace API1.Controllers
 {
-    [Route("api/taxaJuros")]
     [ApiVersion("1")]
     [SwaggerGroup("Taxa de Juros")]
-    [ApiController]
+    [ApiController, Route("api/v{version:apiVersion}/taxaJuros"), Produces("application/json")]
     public class TaxaJurosController : ControllerBase
     {
         private static ILogger<TaxaJurosController> _logger;
